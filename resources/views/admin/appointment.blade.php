@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('assets/css/animations.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"> 
+    <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+    <title>Appointments</title>
+    <style>
+        .popup {
+            animation: transitionIn-Y-bottom 0.5s;
+        }
+
+        .sub-table {
+            animation: transitionIn-Y-bottom 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="menu">
+        @include('admin.menu')
+    </div>
+    <div class="dash-body">
+        <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
+            <tr>
+               
+                <td>
+                    <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Appointment Manager</p>
+
+                </td>
+                <td width="15%">
+                    <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
+                        Today's Date
+                    </p>
+                    <p class="heading-sub12" style="padding: 0;margin: 0;">
+                        <?php
+
+                        date_default_timezone_set('America/Toronto');
+
+                        $today = date('Y-m-d');
+                        echo $today;
+
+                      
+
+                        ?>
+                    </p>
+                </td>
+                <td width="10%">
+                    <button class="btn-label" style="display: flex;justify-content: center;align-items: center;"><img
+                            src="{{asset('assets/img/calendar.svg')}}" width="100%"></button>
+                </td>
+
+
+            </tr>
+
+     
+            <tr>
+                <td colspan="4" style="padding-top:10px;width: 100%;">
+
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All
+                        Appointments ( {{ $appointmentCount}}
+                       )
+                    </p>
+                </td>
+
+            </tr>
+           
+                        </table>
+
+                    </center>
+                </td>
+
+            </tr>
+
+          
+
+            <tr>
+                <td colspan="4">
+                    <center>
+                        <div class="abc scroll">
+                            <table width="93%" class="sub-table scrolldown" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="table-headin">
+                                            Patient name
+                                        </th>
+                                        <th class="table-headin">
+
+                                            Appointment number
+
+                                        </th>
+
+
+                                        <th class="table-headin">
+                                            Doctor
+                                        </th>
+                                        <th class="table-headin">
+
+
+                                            Session Title
+
+                                        </th>
+
+                                        <th class="table-headin">
+
+                                            Session Date & Time
+
+                                        </th>
+
+                                        <th class="table-headin">
+
+                                            Appointment Date
+
+                                        </th>
+
+                                        <th class="table-headin">
+
+                                            Events
+
+                                    </tr>
+                                </thead>
+                              <!-- Inside the HTML table body section -->
+                              <tbody>
+    @foreach ($appointments as $appointment)
+    <tr>
+        <td>{{ $appointment->patient->name }}</td>
+        <td>{{ $appointment->appointment_number }}</td>
+        <td>
+            @if ($appointment->schedule)
+            
+            {{ $appointment->schedule->doctor->name }}</>
+
+            @else
+                No Doctor Available
+            @endif
+        </td>
+        <td>
+            @if ($appointment->schedule)
+            
+                {{ $appointment->schedule->title }}
+            @else
+                No Schedule Available
+            @endif
+        </td>
+        <td>
+            @if ($appointment->schedule)
+                {{ $appointment->schedule->schedule_date }} {{ $appointment->schedule->schedule_time }}
+            @else
+                N/A
+            @endif
+        </td>
+        <td>{{ $appointment->appointment_date }}</td>
+        <td>
+
+<form action="{{ route('destroy-appointment', $appointment->id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this appointment?');">
+@csrf
+@method('DELETE')
+<button type="submit" class="btn-primary-soft btn button-icon btn-delete" style="padding-left: 40px; padding-top: 12px; margin-right: 20px; padding-bottom: 12px; margin-top: 10px;">
+<font class="tn-in-text">Cancel</font>
+</button>
+</form>
+</td>
+
+    </tr>
+    @endforeach
+</tbody>
+
+
+
+                            </table>
+                        </div>
+                    </center>
+                </td>
+            </tr>
+
+
+
+        </table>
+    </div>
+    </div>
+  
+    </div>
+
+</body>
+
+</html>
