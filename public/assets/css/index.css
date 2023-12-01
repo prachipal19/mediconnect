@@ -1,0 +1,60 @@
+/* https://www.shutterstock.com/search/medical-team */
+body {
+    background-image: url("../img/bg01.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+
+body::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.full-height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.heading-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.sub-text3 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.login-btn {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #0774e8;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
