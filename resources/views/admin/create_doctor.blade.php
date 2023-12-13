@@ -106,16 +106,16 @@
                 @method('PUT')
               
                 <label for="name">Name:</label>
-                <input type="text" name="name"  required/>
+                <input type="text" name="name"   />
 
                 <label for="nic">NIC:</label>
-                <input type="text" name="nic"  required/>
+                <input type="text" name="nic"   />
 
                 <label for="email">Email:</label>
-                <input type="email" name="email"  required/>
+                <input type="text" name="email"   />
 
                 <label for="telephone">Telephone:</label>
-                <input type="text" name="telephone"  required/>
+                <input type="text" name="telephone"   />
     
          
 
@@ -129,7 +129,7 @@
         });
     </script>
 
-<select name="specialty_id" id="specialty_id" required>
+<select name="specialty_id" id="specialty_id"  >
     <option value="">Select Specialty</option>
     @foreach ($specialties as $specialty)
         <option value="{{ $specialty->id }}">
@@ -140,10 +140,10 @@
 
 
                 <label for="password">Password:</label>
-                <input type="password" name="password" required/>
+                <input type="password" name="password"  />
 
                 <label for="confirm_password">Confirm Password:</label>
-                <input type="password" name="confirm_password" required/>
+                <input type="password" name="confirm_password"  />
 
              
 

@@ -22,14 +22,7 @@
                 <a href="login">
                     <input type="button" value="Make Appointment" class="login-btn btn-primary btn">
                 </a>
-                <br><br>
-                <h2 style="font-size:20px" class="heading-text">Contact Information:</h2>
-          
-            <p class="sub-text3">
-                Phone: +1-123-456-7890<br>
-                Email: <a class="sub-text3" href="mailto:info@Mediconnecthospitalmanagement.com">info@Mediconnect</a><br>
-                Address: 123 Main Street, Suite 456, Toronto, ON Canada
-            </p>
+                
             </center>
          
         </center>

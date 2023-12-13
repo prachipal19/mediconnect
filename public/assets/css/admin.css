@@ -133,6 +133,8 @@
 
 /* For screens up to 768px wide (e.g., mobile devices) */
 @media (max-width: 768px) {
+td{padding: 5px;}
+
     .container {
         flex-direction: column; /* Stack elements vertically */
     }
@@ -148,15 +150,17 @@
 
 /* For screens above 768px wide (e.g., tablets and desktops) - Use the original styles */
 @media (min-width: 769px) {
-    .container {
-        flex-direction: row; /* Arrange elements horizontally */
+    td{padding: 5px;}
+    
+        .container {
+            flex-direction: column; /* Stack elements vertically */
+        }
+        .menu {
+            width: 30%; /* Take up the full width */
+            border-right: none; /* Remove right border */
+            box-shadow: none; /* Remove the box shadow */
+        }
+        .dash-body {
+            width: 70%; /* Take up the full width */
+        }
     }
-    .menu {
-        width: 21%; /* Adjust the menu width */
-        border-right: 1.5px solid rgb(235, 235, 235); /* Restore the right border */
-        box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3); /* Restore the box shadow */
-    }
-    .dash-body {
-        width: 79%; /* Adjust the dashboard width */
-    }
-}

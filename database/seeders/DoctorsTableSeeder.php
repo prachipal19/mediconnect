@@ -19,7 +19,7 @@ class DoctorsTableSeeder extends Seeder
                 'name' => 'Dr. Smith',
                 'password' => Hash::make('doctorpassword1'),
                 'nic' => '123456789',
-                'telephone' => '123-456-7890',
+                'telephone' => '1234567890',
                 'specialty_id' => 1,
             ],
             [
@@ -27,7 +27,7 @@ class DoctorsTableSeeder extends Seeder
                 'name' => 'Dr. Johnson',
                 'password' => Hash::make('doctorpassword2'),
                 'nic' => '987654321',
-                'telephone' => '987-654-3210',
+                'telephone' => '1234543212',
                 'specialty_id' => 2,
             ],
            

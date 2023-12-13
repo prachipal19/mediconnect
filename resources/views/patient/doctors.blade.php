@@ -82,7 +82,7 @@
         <tr height="50px">
             <td class="table-data">{{ $doctor->name }}</td>
             <td class="table-data">{{ $doctor->email }}</td>
-            <td class="table-data">{{ $doctor->specialty_id }}</td>
+            <td class="table-data">{{ $doctor->specialty->name }}</td>
        <td>
          <!-- View Button -->
 <a  class="btn-primary-soft btn button-icon btn-view" onclick="openViewPopup('{{ route('view-patientdoctor', $doctor->id) }}')" style="padding-left: 40px; margin-right: 20px; padding-top: 12px; padding-bottom: 12px; margin-top: 10px;">

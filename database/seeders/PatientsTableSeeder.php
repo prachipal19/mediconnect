@@ -21,7 +21,7 @@ class PatientsTableSeeder extends Seeder
                 'address' => '123 Main St',
                 'nic' => '555555555',
                 'date_of_birth' => '1990-01-15',
-                'telephone' => '555-555-5555',
+                'telephone' => '1111111111',
             ],
             [
                 'email' => 'patient2@gmail.com',
@@ -30,7 +30,7 @@ class PatientsTableSeeder extends Seeder
                 'address' => '456 Elm St',
                 'nic' => '666666666',
                 'date_of_birth' => '1985-08-22',
-                'telephone' => '666-666-6666',
+                'telephone' => '2222222222',
             ],
 
         ]);

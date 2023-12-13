@@ -155,25 +155,25 @@ if ($patient) {
     {
         // Validate the incoming request
         $validatedData = $request->validate([
-            'fname' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'nic' => 'required|string|max:255',
             'dob' => 'required|date',
-            'newemail' => 'required|email|unique:patients,email',
-            'tele' => 'required|string|max:20',
-            'newpassword' => 'required|string|min:6',
-            'cpassword' => 'required|same:newpassword',
+            'email' => 'required|email|unique:patients,email',
+            'telephone' => 'required|digits:10', 
+            'password' => 'required|string|min:6',
+            'confirmpassword' => 'required|same:password',
         ]);
 
         // Create a new Doctor instance and assign validated data
         $patient = new Patient();
-        $patient->name = $validatedData['fname'];
+        $patient->name = $validatedData['name'];
         $patient->address = $validatedData['address'];
         $patient->nic = $validatedData['nic'];
         $patient->date_of_birth = $validatedData['dob'];
-        $patient->email = $validatedData['newemail'];
-        $patient->telephone = $validatedData['tele'];
-        $patient->password = Hash::make($validatedData['newpassword']); 
+        $patient->email = $validatedData['email'];
+        $patient->telephone = $validatedData['telephone'];
+        $patient->password = Hash::make($validatedData['password']); 
 
     
         $patient->save();
@@ -219,37 +219,75 @@ if ($patient) {
      */
     public function update(Request $request, Patient $patient)
     {
+        // Retrieve the associated webuser
+        $webuser = Webuser::where('email', $patient->email)->first();
+    
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'nic' => 'required|string|max:255',
             'email' => 'required|email|unique:patients,email,' . $patient->id,
-            'telephone' => 'required|string|max:20',
+            'telephone' => 'required|digits:10', 
             'password' => 'nullable|string|min:6',
-            'confirm_password' => 'same:password',
+            'confirmpassword' => 'same:password',
         ]);
     
-        // Update Doctor model with validated data
-        $patient->name = $validatedData['name'];
-        $patient->nic = $validatedData['nic'];
-        $patient->email = $validatedData['email'];
-        $patient->telephone = $validatedData['telephone'];
+        // Begin a transaction to ensure data consistency
+        \DB::beginTransaction();
     
-        // Update password only if provided
-        if ($validatedData['password']) {
-            $patient->password = $validatedData['password']; 
+        try {
+            // Update Patient model with validated data
+            $patient->name = $validatedData['name'];
+            $patient->nic = $validatedData['nic'];
+            $patient->email = $validatedData['email'];
+            $patient->telephone = $validatedData['telephone'];
+    
+            // Update password only if provided
+            if ($validatedData['password']) {
+                $patient->password = Hash::make($validatedData['password']); 
+            }
+    
+            // Update the associated webuser
+            if ($webuser) {
+                $webuser->delete(); // Delete the existing webuser
+                // Create a new webuser with the updated email
+                Webuser::create([
+                    'email' => $validatedData['email'],
+                    'password' => $patient->password, // or fetch the password from $patient if needed
+                    'user_type' => 'p',
+                ]);
+            }
+    
+            // Save updated patient details
+            $patient->save();
+    
+            // Commit changes to the database
+            \DB::commit();
+    
+            return ('Details updated successfully!');
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of an error
+            \DB::rollback();
+            return $e->getMessage(); // Return or handle the error message accordingly
         }
-
-    
-        $patient->save();
-        return ('Deatails updated successfully!');
     }
+    
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Patient $patient)
     {
-        $patient->delete();
+       // Retrieve the associated webuser
+    $webuser = Webuser::where('email', $patient->email)->first();
+
+ 
+      
+    // Delete the patient's account
+    $patient->delete();
+
+    // If a corresponding webuser exists, delete it as well
+    $webuser->delete();
+    
 
         return redirect('/')->with('success', 'Account deleted successfully!');
     }

@@ -78,7 +78,7 @@ echo $today;
 
                                                 </div><br>
                                                 <div class="h3-dashboard">
-                                                    Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Doctors 
                                                 </div>
                                         </div>
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('{{asset('assets/img/icons/doctors-hover.svg')}}');"></div>
@@ -91,7 +91,7 @@ echo $today;
                                                 <span>{{ $patientsCount }}</span>
                                                 </div><br>
                                                 <div class="h3-dashboard">
-                                                    Patients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Patients 
                                                 </div>
                                         </div>
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('{{asset('assets/img/icons/patients-hover.svg')}}');"></div>
@@ -103,21 +103,21 @@ echo $today;
                                                 <div class="h1-dashboard" >
                                                 <span>{{ $newBookingCount }}</span>
                                                 </div><br>
-                                                <div class="h3-dashboard" >
-                                                    NewBooking &nbsp;&nbsp;
+                                                <div class="h3-dashboard">
+                                                    New Bookings  
                                                 </div>
                                         </div>
-                                                <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('{{asset('assets/img/icons/book-hover.svg')}}');"></div>
+                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('{{asset('assets/img/icons/book-hover.svg')}}');"></div>
                                     </div>
                                 </td>
                                 <td style="width: 25%;">
-                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;padding-top:26px;padding-bottom:26px;">
+                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;">
                                         <div>
                                                 <div class="h1-dashboard">
                                                 <span>{{ $todaySessionsCount }}</span>
-                                                </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px">
-                                                    Today Sessions
+                                                </div ><br>
+                                                <div class="h3-dashboard">
+                                                    Today's Sessions 
                                                 </div>
                                         </div>
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('{{asset('assets/img/icons/session-iceblue.svg')}}');"></div>

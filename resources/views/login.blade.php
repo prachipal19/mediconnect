@@ -8,7 +8,9 @@
             <div class="form-body">
                 <p class="header-text">Welcome Back!</p>
                 <p class="sub-text">Login with your details to continue</p>
-
+                @if(session('error'))
+                    <span style="color: red;">{{ session('error') }}</span>
+                @endif
                 <form action="{{ route('login.post') }}" method="POST">
                 @csrf
  
@@ -18,17 +20,17 @@
                     <input type="email" name="email" value="<?= isset($email) ? $email : ''; ?>" class="input-text"
                         placeholder="Email Address">
 
-                    <span style="color:red;">
-                        <?= isset($emailerr) ? $emailerr : ''; ?>
-                    </span>
+                        @if ($errors->has('email'))
+        <span style="color:red;">{{ $errors->first('email') }}</span>
+    @endif
                     <br />
 
                     <label for="password" class="form-label">Password: </label>
 
                     <input type="password" name="password" class="input-text" placeholder="Password">
-                    <span style="color:red;">
-                        <?= isset($pwderr) ? $pwderr : ''; ?>
-                    </span>
+                    @if ($errors->has('password'))
+        <span style="color:red;">{{ $errors->first('password') }}</span>
+    @endif
                     <br />
  
                     <input type="submit" value="Login" name="login" class="login-btn btn-primary btn"><br>

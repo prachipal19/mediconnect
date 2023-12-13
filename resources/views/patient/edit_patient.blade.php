@@ -106,26 +106,46 @@
                 @method('PUT')
                 <input type="hidden" name="patient_id" value="{{ $patient->id }}">
                 <label for="name">Name:</label>
-                <input type="text" name="name" value="{{ old('name', $patient->name) }}" required/>
-
+                <input type="text" name="name" value="{{ old('name', $patient->name) }}"  />
+                @if ($errors->has('name'))
+    <span style="color: red;">{{ $errors->first('name') }}</span>
+@endif
+                    <br />
                 <label for="nic">NIC:</label>
-                <input type="text" name="nic" value="{{ old('nic', $patient->nic) }}" required/>
-
+                <input type="text" name="nic" value="{{ old('nic', $patient->nic) }}"  />
+                @if ($errors->has('nic'))
+    <span style="color: red;">{{ $errors->first('nic') }}</span>
+@endif
+                    <br />
                 <label for="email">Email:</label>
-                <input type="email" name="email" value="{{ old('email', $patient->email) }}" required/>
-
+                <input type="text" name="email" value="{{ old('email', $patient->email) }}"  />
+                @if ($errors->has('email'))
+    <span style="color: red;">{{ $errors->first('email') }}</span>
+@endif
+                    <br />
                 <label for="telephone">Telephone:</label>
-                <input type="text" name="telephone" value="{{ old('telephone', $patient->telephone) }}" required/>
+                <input type="text" name="telephone" value="{{ old('telephone', $patient->telephone) }}"  />
     
-
+                @if ($errors->has('telephone'))
+    <span style="color: red;">{{ $errors->first('telephone') }}</span>
+@endif
+                    <br />
 
                 <label for="password">Password:</label>
-                <input type="password" name="password" required/>
+                <input type="password" name="password"  />
+
+                @if ($errors->has('password'))
+    <span style="color: red;">{{ $errors->first('password') }}</span>
+@endif
+                    <br />
 
                 <label for="confirm_password">Confirm Password:</label>
-                <input type="password" name="confirm_password" required/>
+                <input type="password" name="confirm_password"  />
 
-             
+                @if ($errors->has('confirmpassword'))
+    <span style="color: red;">{{ $errors->first('confirmpassword') }}</span>
+@endif
+                    <br />
 
                 <input type="submit" style="background-color:#0A76D8;" value="Update" />
             </form>

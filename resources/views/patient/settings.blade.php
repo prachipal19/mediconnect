@@ -79,7 +79,7 @@
                                                        <a href=""
                                                             onclick="openEditPopup('{{ route('edit-patient', $patient->id) }}')"
                                                             style=" color: #0A76D8;text-decoration: none;">
-                                                            Account Settings &nbsp;
+                                                            Account settings
                                                         </a>
 
                                                         <!-- Add a script section -->
@@ -136,7 +136,7 @@
 
                                                      <!-- View Button -->
 <a onclick="openViewPopup('{{ route('view-patient', $patient->id) }}')"  style=" color: #0A76D8;text-decoration: none;">
-View Account Details &nbsp;
+Account Details 
 </a>
 
 <!-- Script for the View Patient Popup -->

@@ -66,7 +66,7 @@
                                         You can view your daily schedule, Reach Patients Appointment at home!<br><br>
                                         </p>
                                         <a href="{{ route('doctorappointment', ['email' => $doctor->email]) }}" class="non-style-link">
-                                            <button class="btn-primary btn" style="width: 30%">View My Appointments</button>
+                                            <button class="btn-primary btn">View My Appointments</button>
                                         </a>
                                         <br>
                                         <br>

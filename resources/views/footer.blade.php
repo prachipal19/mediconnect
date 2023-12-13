@@ -16,7 +16,13 @@
     <footer class="footer bg-dark text-white text-center py-3">
 
 
-        <p>&copy; 2023 MediConnect. By DevDynamos.</p>
+        <p class="sub-text3">&copy; 2023 MediConnect. By DevDynamos.</p>
+         
+          <p class="sub-text3">
+              Phone: +1-123-456-7890<br>
+              Email: <a class="sub-text3" href="mailto:info@Mediconnecthospitalmanagement.com">info@Mediconnect</a><br>
+              Address: 123 Main Street, Suite 456, Toronto, ON Canada
+          </p>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

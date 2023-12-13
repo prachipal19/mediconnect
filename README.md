@@ -1,66 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Team DevDeynamos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Team Members and Contribution
 
-## About Laravel
+1. **Prachi Pal (N01539476)**
+   - **Work:** Design UI/UX, Sign In and Sign Out, Admin Dashboard, Admin Doctor, Migration from PHP to Laravel.
+   - **Contact:** [prachipal205@gmail.com](mailto:prachipal205@gmail.com)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. **Chintan Bhensdadiya (N01548815)**
+   - **Work:** Design UI/UX, Admin Patients, Admin Schedule, Admin Appointment, Database, Documentation.
+   - **Contact:** [bchintan99@gmail.com](mailto:bchintan99@gmail.com)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. **Surya Karan Sharma (N01530697)**
+   - **Work:** Doctor Dashboard, Doctor Appointment, Doctor Schedule.
+   - **Contact:** [surya.sharma@humber.ca](mailto:surya.sharma@humber.ca)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+4. **Nish Kamli (N01548012)**
+   - **Work:** Doctor Patients, Doctor Menu, Doctor Settings, Patients Menu.
+   - **Contact:** [nishkamli1@gmail.com](mailto:nishkamli1@gmail.com)
 
-## Learning Laravel
+5. **Muskan Ahluwalia (N01483573)**
+   - **Work:** Patient Dashboard, Patients Schedule, Patients appointment, Patients Settings.
+   - **Contact:** [muskaanwalia89@gmail.com](mailto:muskaanwalia89@gmail.com)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Project Overview: Mediconnect
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Overview
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Mediconnect is a web application designed to streamline the appointment booking process for patients, provide doctors with a clear view of their schedules, and empower administrators to manage appointments efficiently. The application encompasses key features for account management, appointment scheduling, and all CRUD operations.
 
-## Laravel Sponsors
+### Features by User Role
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### Patient Features:
 
-### Premium Partners
+1. **Account Creation:**
+   - Patients can create accounts with essential information such as name, contact details, and medical history.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. **Sign In/Sign Out:**
+   - Secure authentication for users to sign in and out.
 
-## Contributing
+3. **Appointment Booking:**
+   - View available sessions or time slots.
+   - Select and book appointments with preferred doctors.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Cancel Appointments:**
+   - Ability for patients to cancel booked appointments.
 
-## Code of Conduct
+5. **View Appointment History:**
+   - Access to a history of past appointments.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Profile Management:**
+   - Update personal information and medical history.
 
-## Security Vulnerabilities
+#### Doctor Features:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Account Creation:**
+   - Doctors can create accounts with professional information.
+
+2. **Sign In/Sign Out:**
+   - Secure authentication for doctors to access the system.
+
+3. **View Appointments:**
+   - Doctors can view upcoming appointments and patient details.
+
+4. **Availability Management:**
+   - Set and update availability for appointments.
+
+5. **Profile Management:**
+   - Update professional information and specialties.
+
+#### Admin Features:
+
+1. **Account Creation:**
+   - Separate authentication system for administrators.
+
+2. **Doctor Assignment:**
+   - Assign doctors to available time slots or manage doctor-patient relationships.
+
+3. **Appointment Management:**
+   - View, modify, or cancel operations as needed.
+
+4. **User Management:**
+   - Manage patient and doctor accounts.
+
+5. **Reports and Analytics:**
+   - Generate reports on appointments, doctor availability, and other relevant data.
+
+### Common Features:
+
+1. **Notification System:**
+   - Email or SMS notifications for appointment confirmations, cancellations, and reminders.
+
+2. **Search Functionality:**
+   - Enable patients to search for doctors based on specialties, availability, or location.
+
+3. **Responsive Design:**
+   - Ensure the web app is accessible and user-friendly on various devices.
+
+## Getting Started
+
+**ADD LOGINS HERE**
+
+## Communication
+
+Emails, Whatsapp, Regular Teams Meetings, Git.
+
+## Feedback and Support
+
+For Feedback and Support contact: [chintanbhensdadiya17@gmail.com](mailto:chintanbhensdadiya17@gmail.com)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+
+## Demo
+
+![Screenshot 1](./screenshots/1.jpg)
+![Screenshot 2](./screenshots/2.jpg)
+![Screenshot 3](./screenshots/3.jpg)
+![Screenshot 4](./screenshots/4.jpg)
+![Screenshot 5](./screenshots/5.jpg)
+![Screenshot 5](./screenshots/6.jpg)
+

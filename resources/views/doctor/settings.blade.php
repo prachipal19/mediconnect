@@ -81,7 +81,7 @@
                                                         <a href=""
                                                             onclick="openEditPopup('{{ route('edit-doc', $doctor->id) }}')"
                                                             style=" color: #0A76D8;text-decoration: none;">
-                                                            Account Settings &nbsp;
+                                                            Account settings
                                                         </a>
 
                                                         <!-- Add a script section -->
@@ -141,7 +141,7 @@
                                                         <a href=""
                                                             onclick="openEditPopup('{{ route('view-doctor', $doctor->id) }}')"
                                                             style=" color: #0A76D8;text-decoration: none;">
-                                                            View Account Details &nbsp;
+                                                            Account Details 
                                                         </a>
 
                                                         <!-- Script for the View Doctor Popup -->

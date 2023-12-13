@@ -123,12 +123,12 @@
                 </tr>
                
                 <tr >
-                    <td colspan="2" style="padding-top:30px;">
+                    <td style="">
                         <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Add New Doctor</p>
                     </td>
-                    <td colspan="2">
+                    <td>
                     <a href="" class="non-style-link">
-    <button class="login-btn btn-primary btn button-icon" onclick="openAddPopup('{{ route('add-doctor') }}')" style="display: flex;justify-content: center;align-items: center;margin-left:75px;background-image: url('{{asset('assets/img/icons/add.svg')}}');">
+    <button class="login-btn btn-primary btn button-icon" onclick="openAddPopup('{{ route('add-doctor') }}')" style="display: flex;justify-content: center;align-items: center;background-image: url('{{asset('assets/img/icons/add.svg')}}');">
         Add New
     </button>
 </a>
@@ -253,7 +253,7 @@
 <form action="{{ route('destroy-doctor', $doctor->id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this doctor?');">
     @csrf
     @method('DELETE')
-    <button type="submit" class="btn-primary-soft btn button-icon btn-delete" style="padding-left: 40px; padding-top: 12px; margin-right: 20px; padding-bottom: 12px; margin-top: 10px;">
+    <button type="submit" class="btn-primary-soft btn button-icon btn-delete" style="padding-left: 40px; padding-top: 12px; margin-right: 20px; padding-bottom: 12px;">
         <font class="tn-in-text">Remove</font>
     </button>
 </form>

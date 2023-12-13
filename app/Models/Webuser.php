@@ -16,9 +16,9 @@ class Webuser extends Model implements Authenticatable
     protected $primaryKey = 'email';
     public $timestamps = false;
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'user_type',
     ];
 
     // Implementing methods required by the Authenticatable interface

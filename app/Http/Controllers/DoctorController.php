@@ -159,7 +159,7 @@ class DoctorController extends Controller
             'name' => 'required|string|max:255',
             'nic' => 'required|string|max:255',
             'email' => 'required|email|unique:doctors,email',
-            'telephone' => 'required|string|max:20',
+            'telephone' => 'required|digits:10', 
             'password' => 'required|string|min:6',
             'confirm_password' => 'same:password',
             'specialty_id' => 'required|exists:specialties,id',
@@ -216,16 +216,20 @@ class DoctorController extends Controller
 
 public function update(Request $request, Doctor $doctor)
 {
+    $webuser = Webuser::where('email', $doctor->email)->first();
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'nic' => 'required|string|max:255',
         'email' => 'required|email|unique:doctors,email,' . $doctor->id,
-        'telephone' => 'required|string|max:20',
-        'password' => 'nullable|string|min:6',
+        'telephone' => 'required|digits:10', 
+        'password' => 'required|string|min:6',
         'confirm_password' => 'same:password',
         'specialty_id' => 'required|exists:specialties,id',
     ]);
 
+     // Begin a transaction to ensure data consistency
+     \DB::beginTransaction();
+try{
     // Update Doctor model with validated data
     $doctor->name = $validatedData['name'];
     $doctor->nic = $validatedData['nic'];
@@ -234,7 +238,7 @@ public function update(Request $request, Doctor $doctor)
 
     // Update password only if provided
     if ($validatedData['password']) {
-        $doctor->password = $validatedData['password']; 
+        $doctor->password = Hash::make($validatedData['password']);      
     }
 
     // Update specialty only if a new value is selected
@@ -242,23 +246,47 @@ public function update(Request $request, Doctor $doctor)
         $doctor->specialty_id = $validatedData['specialty_id'];
     }
 
+    
+     // Update the associated webuser
+     if ($webuser) {
+        $webuser->delete(); // Delete the existing webuser
+        // Create a new webuser with the updated email
+        Webuser::create([
+            'email' => $validatedData['email'],
+            'password' => $doctor->password, 
+            'user_type' => 'd',
+        ]);
+    }
+
     $doctor->save();
-    return ('Doctor updated successfully!');
+              // Commit changes to the database
+              \DB::commit();
+    
+              return ('Details updated successfully!');
+          } catch (\Exception $e) {
+              // Rollback the transaction in case of an error
+              \DB::rollback();
+              return $e->getMessage(); // Return or handle the error message accordingly
+          }
 }
 
 
 public function updatedoc(Request $request, Doctor $doctor)
 {
+    $webuser = Webuser::where('email', $doctor->email)->first();
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'nic' => 'required|string|max:255',
         'email' => 'required|email|unique:doctors,email,' . $doctor->id,
-        'telephone' => 'required|string|max:20',
-        'password' => 'nullable|string|min:6',
+        'telephone' => 'required|digits:10', 
+            'password' => 'required|string|min:6',
         'confirm_password' => 'same:password',
         'specialty_id' => 'required|exists:specialties,id',
     ]);
 
+ // Begin a transaction to ensure data consistency
+ \DB::beginTransaction();
+try{
     // Update Doctor model with validated data
     $doctor->name = $validatedData['name'];
     $doctor->nic = $validatedData['nic'];
@@ -267,7 +295,7 @@ public function updatedoc(Request $request, Doctor $doctor)
 
     // Update password only if provided
     if ($validatedData['password']) {
-        $doctor->password = $validatedData['password']; 
+        $doctor->password = Hash::make($validatedData['password']); 
     }
 
     // Update specialty only if a new value is selected
@@ -275,8 +303,27 @@ public function updatedoc(Request $request, Doctor $doctor)
         $doctor->specialty_id = $validatedData['specialty_id'];
     }
 
+     // Update the associated webuser
+     if ($webuser) {
+        $webuser->delete(); // Delete the existing webuser
+        // Create a new webuser with the updated email
+        Webuser::create([
+            'email' => $validatedData['email'],
+            'password' => $doctor->password, 
+            'user_type' => 'd',
+        ]);
+    }
     $doctor->save();
-    return ('Doctor updated successfully!');
+
+ // Commit changes to the database
+ \DB::commit();
+    
+ return ('Details updated successfully!');
+} catch (\Exception $e) {
+ // Rollback the transaction in case of an error
+ \DB::rollback();
+ return $e->getMessage(); // Return or handle the error message accordingly
+}
 }
 
      
@@ -286,16 +333,20 @@ public function updatedoc(Request $request, Doctor $doctor)
      */
     public function destroy(Doctor $doctor)
     {
+        $webuser = Webuser::where('email', $doctor->email)->first();
         // Logic to delete the specific doctor
         $doctor->delete();
+        $webuser->delete();
 
         return redirect('admindoctors')->with('success', 'Doctor deleted successfully!');
     }
 
     public function destroydoc(Doctor $doctor)
     {
+        $webuser = Webuser::where('email', $doctor->email)->first();
         // Logic to delete the specific doctor
         $doctor->delete();
+        $webuser->delete();
 
         return redirect('/')->with('success', 'Account deleted successfully!');
     }

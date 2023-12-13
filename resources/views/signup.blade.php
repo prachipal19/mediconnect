@@ -10,65 +10,67 @@
                 @method('PUT')
               
                     <label for="name" class="form-label">Name: </label>
-                    <input type="text" name="fname" value="<?= isset($fname) ? $fname : ''; ?>" class="input-text" placeholder="Name"  >
-                    <span style="color:red;">
-                        <?= isset($nameerr) ? $nameerr : ''; ?>
-                    </span>
+                    <input type="text" name="name" value="<?= isset($fname) ? $fname : ''; ?>" class="input-text" placeholder="Name"  >
+                    @if ($errors->has('name'))
+    <span style="color: red;">{{ $errors->first('name') }}</span>
+@endif
                     <br />
                     <label for="address" class="form-label">Address: </label>
                     <input type="text" name="address" value="<?= isset($address) ? $address : ''; ?>" class="input-text" placeholder="Address"  >
-                    <span style="color:red;">
-                        <?= isset($addresserr) ? $addresserr : ''; ?>
-                    </span>
+                    @if ($errors->has('address'))
+    <span style="color: red;">{{ $errors->first('address') }}</span>
+@endif
                     <br />
                     <label for="nic" class="form-label">NIC: </label>
                     <input type="text" name="nic" value="<?= isset($nic) ? $nic : ''; ?>" class="input-text" placeholder="NIC Number"  >
-                    <span style="color:red;">
-                        <?= isset($nicerr) ? $nicerr : ''; ?>
-                    </span>
+                    @if ($errors->has('nic'))
+    <span style="color: red;">{{ $errors->first('nic') }}</span>
+@endif
                     <br />
                     <label for="dob" class="form-label">Date of Birth: </label>
                     <input type="date" name="dob" value="<?= isset($dob) ? $dob : ''; ?>" class="input-text"  >
-                    <span style="color:red;">
-                        <?= isset($doberr) ? $doberr : ''; ?>
-                    </span>
+                    @if ($errors->has('dob'))
+    <span style="color: red;">{{ $errors->first('dob') }}</span>
+@endif
                     <br />
 
                   
-            <label for="newemail" class="form-label">Email:</label>
-            <input type="email" name="newemail" value="<?= isset($email) ? $email : ''; ?>" class="input-text"
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" name="email" value="<?= isset($email) ? $email : ''; ?>" class="input-text"
                         placeholder="Email Address">
 
 
-                    <span style="color:red;">
-                        <?= isset($emailerr) ? $emailerr : ''; ?>
-                    </span>
+                        @if ($errors->has('email'))
+    <span style="color: red;">{{ $errors->first('email') }}</span>
+@endif
                     <br />
 
 
     
-            <label for="tele" class="form-label">Mobile Number:</label>
-            <input type="text" name="tele" value="<?= isset($tel) ? $tel : ''; ?>" class="input-text" placeholder="Phone Number">
+            <label for="telephone" class="form-label">Mobile Number:</label>
+            <input type="text" name="telephone" value="<?= isset($tel) ? $tel : ''; ?>" class="input-text" placeholder="Phone Number">
 
-                    <span style="color:red;">
-                        <?= isset($telerr) ? $telerr : ''; ?>
-                    </span>
+            @if ($errors->has('telephone'))
+    <span style="color: red;">{{ $errors->first('telephone') }}</span>
+@endif
                     <br />
       
-            <label for="newpassword" class="form-label">Create New Password:</label>
-            <input type="password" name="newpassword"  class="input-text" placeholder="Password">
-                    <span style="color:red;">
-                        <?= isset($pwderr) ? $pwderr : ''; ?>
-                    </span>
+            <label for="password" class="form-label">Create New Password:</label>
+            <input type="password" name="password"  class="input-text" placeholder="Password">
+               
+            @if ($errors->has('password'))
+    <span style="color: red;">{{ $errors->first('password') }}</span>
+@endif
                     <br />
  
     
-            <label for="cpassword" class="form-label">Confirm Password:</label>
-            <input type="password" name="cpassword" class="input-text" placeholder="Confirm Password">
+            <label for="confirmpassword" class="form-label">Confirm Password:</label>
+            <input type="password" name="confirmpassword" class="input-text" placeholder="Confirm Password">
            
-                    <span style="color:red;">
-                        <?= isset($conpwderr) ? $conpwderr : ''; ?>
-                    </span>
+                 
+            @if ($errors->has('confirmpassword'))
+    <span style="color: red;">{{ $errors->first('confirmpassword') }}</span>
+@endif
                     <br />
 
 

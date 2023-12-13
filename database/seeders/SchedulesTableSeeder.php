@@ -14,9 +14,9 @@ class SchedulesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('schedules')->insert([
-            ['doctor_id' => 1, 'title' => 'Cardiology Clinic', 'schedule_date' => '2023-11-27', 'schedule_time' => '09:00:00', 'number_of_patients' => 10],
-            ['doctor_id' => 2, 'title' => 'Dermatology Clinic', 'schedule_date' => '2023-11-28', 'schedule_time' => '10:30:00', 'number_of_patients' => 8],
-            // Add more schedule records as needed
+            ['doctor_id' => 1, 'title' => 'Cardiology Clinic', 'schedule_date' => '2023-12-20', 'schedule_time' => '09:00:00', 'number_of_patients' => 10],
+            ['doctor_id' => 2, 'title' => 'Dermatology Clinic', 'schedule_date' => '2023-12-21', 'schedule_time' => '10:30:00', 'number_of_patients' => 8],
+           
         ]);
     }
 }
