@@ -1,28 +1,3 @@
-# Team DevDeynamos
-
-## Team Members and Contribution
-
-1. Prachi Pal (N01539476)
-   - Work: Design UI/UX, Sign In and Sign Out, Admin Dashboard, Admin Doctor,Create Doctor, View Doctor ,admin menu, Delete Doctor, 
-   Search doctor, Migration from PHP to Laravel.
-   - Contact: [prachipal205@gmail.com](mailto:prachipal205@gmail.com)
-
-2. Chintan Bhensdadiya (N01548815)
-   - Work: Design UI/UX, Admin Patients, Admin Schedule, Admin Appointment, Search patient, view patient, delete appointment and schedule,  Database, Documentation.
-   - Contact: [bchintan99@gmail.com](mailto:bchintan99@gmail.com)
-
-3. Surya Karan Sharma (N01530697)
-   - Work: Doctor Dashboard, Doctor Appointment, Doctor Schedule, Doctor Settings, create view and delete doctors.
-   - Contact: [surya.sharma@humber.ca](mailto:surya.sharma@humber.ca)
-
-4. Nish Kamli (N01548012)
-   - Work: Doctor Patients,delete doctor schedule ,doctor menu,  Patients Dashboard, Patients appointment, delete appointment.
-   - Contact: [nishkamli1@gmail.com](mailto:nishkamli1@gmail.com)
-
-5. Muskan Ahluwalia (N01483573)
-   - Work: Patient Dashboard, Patients Schedule, Patients Settings, create view and delete patients.
-   - Contact: [muskaanwalia89@gmail.com](mailto:muskaanwalia89@gmail.com)
-
 ## Project Overview: Mediconnect
 
 ### Overview
@@ -109,17 +84,8 @@ email - patient1@gmail.com
 password - patientpassword1
 
 
-## Communication
 
-Emails, Whatsapp, Regular Teams Meetings, Git.
 
-## Feedback and Support
-
-For Feedback and Support contact: [chintanbhensdadiya17@gmail.com](mailto:chintanbhensdadiya17@gmail.com)
-
-## License
-
-This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
 
 ## Demo
 
