@@ -125,7 +125,7 @@
                 <label for="date">Date:</label>
                 <input type="date" name="date"  required/>
 
-                <label for="time">Email:</label>
+                <label for="time">Time:</label>
                 <input type="time" name="time"  required/>
 
                 <label for="nop">No. of patients:</label>
