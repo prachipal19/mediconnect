@@ -2,25 +2,26 @@
 
 ## Team Members and Contribution
 
-1. **Prachi Pal (N01539476)**
-   - **Work:** Design UI/UX, Sign In and Sign Out, Admin Dashboard, Admin Doctor, Migration from PHP to Laravel.
-   - **Contact:** [prachipal205@gmail.com](mailto:prachipal205@gmail.com)
+1. Prachi Pal (N01539476)
+   - Work: Design UI/UX, Sign In and Sign Out, Admin Dashboard, Admin Doctor,Create Doctor, View Doctor ,admin menu, Delete Doctor, 
+   Search doctor, Migration from PHP to Laravel.
+   - Contact: [prachipal205@gmail.com](mailto:prachipal205@gmail.com)
 
-2. **Chintan Bhensdadiya (N01548815)**
-   - **Work:** Design UI/UX, Admin Patients, Admin Schedule, Admin Appointment, Database, Documentation.
-   - **Contact:** [bchintan99@gmail.com](mailto:bchintan99@gmail.com)
+2. Chintan Bhensdadiya (N01548815)
+   - Work: Design UI/UX, Admin Patients, Admin Schedule, Admin Appointment, Search patient, view patient, delete appointment and schedule,  Database, Documentation.
+   - Contact: [bchintan99@gmail.com](mailto:bchintan99@gmail.com)
 
-3. **Surya Karan Sharma (N01530697)**
-   - **Work:** Doctor Dashboard, Doctor Appointment, Doctor Schedule.
-   - **Contact:** [surya.sharma@humber.ca](mailto:surya.sharma@humber.ca)
+3. Surya Karan Sharma (N01530697)
+   - Work: Doctor Dashboard, Doctor Appointment, Doctor Schedule, Doctor Settings, create view and delete doctors.
+   - Contact: [surya.sharma@humber.ca](mailto:surya.sharma@humber.ca)
 
-4. **Nish Kamli (N01548012)**
-   - **Work:** Doctor Patients, Doctor Menu, Doctor Settings, Patients Menu.
-   - **Contact:** [nishkamli1@gmail.com](mailto:nishkamli1@gmail.com)
+4. Nish Kamli (N01548012)
+   - Work: Doctor Patients,delete doctor schedule ,doctor menu,  Patients Dashboard, Patients appointment, delete appointment.
+   - Contact: [nishkamli1@gmail.com](mailto:nishkamli1@gmail.com)
 
-5. **Muskan Ahluwalia (N01483573)**
-   - **Work:** Patient Dashboard, Patients Schedule, Patients appointment, Patients Settings.
-   - **Contact:** [muskaanwalia89@gmail.com](mailto:muskaanwalia89@gmail.com)
+5. Muskan Ahluwalia (N01483573)
+   - Work: Patient Dashboard, Patients Schedule, Patients Settings, create view and delete patients.
+   - Contact: [muskaanwalia89@gmail.com](mailto:muskaanwalia89@gmail.com)
 
 ## Project Overview: Mediconnect
 
@@ -32,73 +33,81 @@ Mediconnect is a web application designed to streamline the appointment booking 
 
 #### Patient Features:
 
-1. **Account Creation:**
+1. Account Creation:
    - Patients can create accounts with essential information such as name, contact details, and medical history.
 
-2. **Sign In/Sign Out:**
+2. Sign In/Sign Out:
    - Secure authentication for users to sign in and out.
 
-3. **Appointment Booking:**
+3. Appointment Booking:
    - View available sessions or time slots.
    - Select and book appointments with preferred doctors.
 
-4. **Cancel Appointments:**
+4. Cancel Appointments:
    - Ability for patients to cancel booked appointments.
 
-5. **View Appointment History:**
+5. View Appointment History:
    - Access to a history of past appointments.
 
-6. **Profile Management:**
+6. Profile Management:
    - Update personal information and medical history.
 
 #### Doctor Features:
 
-1. **Account Creation:**
+1. Account Creation:
    - Doctors can create accounts with professional information.
 
-2. **Sign In/Sign Out:**
+2. Sign In/Sign Out:
    - Secure authentication for doctors to access the system.
 
-3. **View Appointments:**
+3. View Appointments:
    - Doctors can view upcoming appointments and patient details.
 
-4. **Availability Management:**
+4. Availability Management:
    - Set and update availability for appointments.
 
-5. **Profile Management:**
+5. Profile Management:
    - Update professional information and specialties.
 
 #### Admin Features:
 
-1. **Account Creation:**
+1. Account Creation:
    - Separate authentication system for administrators.
 
-2. **Doctor Assignment:**
+2. Doctor Assignment:
    - Assign doctors to available time slots or manage doctor-patient relationships.
 
-3. **Appointment Management:**
+3. Appointment Management:
    - View, modify, or cancel operations as needed.
 
-4. **User Management:**
+4. User Management:
    - Manage patient and doctor accounts.
 
-5. **Reports and Analytics:**
+5. Reports and Analytics:
    - Generate reports on appointments, doctor availability, and other relevant data.
 
 ### Common Features:
 
-1. **Notification System:**
-   - Email or SMS notifications for appointment confirmations, cancellations, and reminders.
-
-2. **Search Functionality:**
+1. Search Functionality:
    - Enable patients to search for doctors based on specialties, availability, or location.
 
-3. **Responsive Design:**
+2. Responsive Design:
    - Ensure the web app is accessible and user-friendly on various devices.
 
 ## Getting Started
 
-**ADD LOGINS HERE**
+Admin Portal login:
+email - admin@mediconnect.com
+password - password1
+
+Doctor Portal login:
+email - doctor1@mediconnect.com
+password - doctorpassword1
+
+Patient Portal login:
+email - patient1@gmail.com
+password - patientpassword1
+
 
 ## Communication
 
