@@ -85,7 +85,7 @@ password - patientpassword1
 
 
 
-
+Deployed URL: https://phplaravel-1182355-4150109.cloudwaysapps.com/
 
 ## Demo
 
